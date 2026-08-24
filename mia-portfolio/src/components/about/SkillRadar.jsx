@@ -7,7 +7,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { radarStats } from "../../data/aboutdata";
+import { radarStats } from "../../data/aboutData";
 
 function SkillRadar() {
   return (
