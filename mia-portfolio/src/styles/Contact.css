@@ -1,0 +1,1262 @@
+/* =========================================
+   CONTACT PAGE
+========================================= */
+
+.contact-page {
+  width: 100%;
+  min-height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: var(--cream, #fffaf1);
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   CONTACT HERO / BANNER
+========================================= */
+
+.contact-hero {
+  position: relative;
+
+  width: 100%;
+  height: 280px;
+
+  padding:
+    28px
+    24px
+    24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #ddefa0;
+
+  border-bottom: 4px solid #6f8f4b;
+
+  overflow: hidden;
+  isolation: isolate;
+}
+
+
+/* =========================================
+   TITLE STAGE
+========================================= */
+
+.contact-title-stage {
+  position: relative;
+
+  width: 100%;
+  min-height: 105px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 3;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   CONTACT TITLE
+========================================= */
+
+.contact-title {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+
+  min-width: 1px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: clamp(3.8rem, 9vw, 7.4rem);
+  font-weight: normal;
+
+  line-height: 0.95;
+
+  letter-spacing: 0.035em;
+
+  color: #3f2d56;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    3px 3px 0 #fff8e8,
+    6px 6px 0 #9079b7;
+
+  white-space: nowrap;
+
+  transform: translateX(0);
+}
+
+
+/* =========================================
+   TYPED TEXT
+========================================= */
+
+.contact-title-text {
+  display: inline-block;
+}
+
+
+/* =========================================
+   PIXEL CARET
+========================================= */
+
+.contact-type-caret {
+  display: inline-block;
+
+  width: clamp(6px, 0.8vw, 10px);
+  height: 0.78em;
+
+  margin-left: 10px;
+
+  background: #3f2d56;
+
+  box-shadow:
+    3px 3px 0 #fff8e8;
+
+  animation:
+    contactCaretBlink 0.62s
+    steps(1)
+    infinite;
+}
+
+
+.contact-type-caret--hidden {
+  opacity: 0;
+}
+
+
+/* =========================================
+   TITLE SWOOSH
+========================================= */
+
+.contact-title--swoosh-out {
+  animation:
+    contactSwooshOut 0.52s
+    cubic-bezier(0.72, 0, 0.88, 0.58)
+    forwards;
+}
+
+
+.contact-title--swoosh-back {
+  animation:
+    contactSwooshBack 0.7s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+}
+
+
+/* =========================================
+   HERO SEND BUTTON
+========================================= */
+
+.contact-send-button {
+  position: relative;
+
+  z-index: 5;
+
+  margin-top: 18px;
+
+  min-width: 145px;
+
+  padding:
+    13px
+    28px
+    11px;
+
+  border: 4px solid #3f2d56;
+  border-radius: 0;
+
+  background: #fffaf1;
+
+  color: #3f2d56;
+
+  font-family: "PixelSerif", serif;
+  font-size: 1.05rem;
+  font-weight: normal;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    6px 6px 0 #3f2d56;
+
+  transform: translate(0, 0);
+
+  transition:
+    transform 100ms steps(2),
+    box-shadow 100ms steps(2),
+    background-color 120ms linear,
+    color 120ms linear;
+}
+
+
+.contact-send-button:hover {
+  background: #d7c5e7;
+}
+
+
+.contact-send-button--pressed {
+  transform: translate(5px, 5px);
+
+  box-shadow:
+    1px 1px 0 #3f2d56;
+
+  background: #d7c5e7;
+}
+
+
+/* =========================================
+   PNG PIXEL CURSOR
+========================================= */
+
+.pixel-cursor {
+  position: absolute;
+
+  left: 78%;
+  top: 19%;
+
+  width: 68px;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-7deg);
+
+  transform-origin: top left;
+
+  transition:
+    left 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    top 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.25s ease;
+
+  animation:
+    cursorFloat 1.8s
+    ease-in-out
+    infinite alternate;
+}
+
+
+.pixel-cursor-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  user-select: none;
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+
+  pointer-events: none;
+}
+
+
+.pixel-cursor--at-send {
+  left: calc(50% + 72px);
+  top: calc(50% + 69px);
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-4deg);
+
+  animation: none;
+}
+
+
+.pixel-cursor--click {
+  animation:
+    cursorClick 0.28s
+    steps(2)
+    both;
+}
+
+
+/* =========================================
+   CONTACT FORM SECTION
+========================================= */
+
+.contact-form-section {
+  width: 100%;
+
+  padding:
+    200px
+    24px
+    120px;
+
+  background: var(--cream, #fffaf1);
+}
+
+
+/* =========================================
+   ENVELOPE + PAPER STAGE
+========================================= */
+
+.contact-envelope-stage {
+  position: relative;
+
+  width: min(980px, 100%);
+
+  min-height: 900px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+/* =========================================
+   FULL ENVELOPE PNG
+========================================= */
+
+.contact-envelope {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  width: min(900px, 95vw);
+  height: auto;
+
+  transform: translateX(-50%);
+
+  z-index: 1;
+
+  pointer-events: none;
+  user-select: none;
+
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+
+/* =========================================
+   CREAM PAPER
+========================================= */
+
+.contact-paper {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(680px, 72%);
+
+  margin-top: -50px;
+
+  background: #fffaf1;
+
+  border: 4px solid #3f2d56;
+
+  box-shadow:
+    9px 9px 0 #9079b7;
+}
+
+
+.contact-paper-inner {
+  padding:
+    42px
+    44px
+    40px;
+}
+
+
+/* =========================================
+   FORM HEADING
+========================================= */
+
+.contact-form-heading {
+  margin:
+    0
+    0
+    10px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+
+  font-weight: normal;
+
+  line-height: 1;
+
+  letter-spacing: 0.04em;
+
+  color: #3f2d56;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    2px 2px 0 #d7c5e7;
+}
+
+
+.contact-form-subheading {
+  margin:
+    0
+    0
+    34px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  color: #6f4b98;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.contact-form {
+  width: 100%;
+}
+
+
+.contact-field {
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.contact-label {
+  display: inline-block;
+
+  margin-bottom: 9px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.95rem;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.05em;
+
+  color: #3f2d56;
+}
+
+
+.contact-required {
+  margin-left: 4px;
+
+  color: #d76f8d;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+
+  padding:
+    13px
+    15px;
+
+  border: 3px solid #9079b7;
+  border-radius: 0;
+
+  background: #fffdf8;
+
+  color: #3f2d56;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.95rem;
+
+  line-height: 1.5;
+
+  outline: none;
+
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+
+.contact-input {
+  min-height: 54px;
+}
+
+
+.contact-textarea {
+  min-height: 180px;
+
+  resize: vertical;
+}
+
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: #3f2d56;
+
+  box-shadow:
+    4px 4px 0 #d7c5e7;
+}
+
+
+/* =========================================
+   SEND BUTTON AREA
+========================================= */
+
+.contact-form-actions {
+  width: 100%;
+
+  margin-top: 10px;
+
+  display: flex;
+
+  justify-content: flex-end;
+}
+
+
+/* =========================================
+   FORM SEND BUTTON
+========================================= */
+
+.contact-form-submit {
+  min-width: 145px;
+
+  padding:
+    13px
+    28px
+    11px;
+
+  border: 4px solid #3f2d56;
+  border-radius: 0;
+
+  background: #9079b7;
+
+  color: #fffaf1;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 1.05rem;
+
+  font-weight: normal;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    6px 6px 0 #3f2d56;
+
+  transform: translate(0, 0);
+
+  transition:
+    transform 100ms steps(2),
+    box-shadow 100ms steps(2),
+    background-color 120ms linear;
+}
+
+
+.contact-form-submit:hover {
+  background: #8069a6;
+}
+
+
+.contact-form-submit:active {
+  transform:
+    translate(5px, 5px);
+
+  box-shadow:
+    1px 1px 0 #3f2d56;
+}
+
+
+.contact-form-submit:disabled {
+  cursor: wait;
+
+  opacity: 0.75;
+}
+
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.contact-error-message {
+  margin:
+    4px
+    0
+    20px;
+
+  padding:
+    12px
+    14px;
+
+  border: 3px solid #3f2d56;
+
+  background: #f7c4cf;
+
+  color: #3f2d56;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   SUCCESS POPUP
+========================================= */
+
+.contact-success-box {
+  position: relative;
+
+  width: min(500px, 100%);
+
+  min-height: 300px;
+
+  margin:
+    65px
+    auto;
+
+  padding:
+    55px
+    38px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #d7c5e7;
+
+  border: 5px solid #3f2d56;
+
+  box-shadow:
+    10px 10px 0 #3f2d56;
+
+  animation:
+    contactSuccessPop 0.45s
+    steps(5)
+    both;
+}
+
+
+/* =========================================
+   SUCCESS TITLE
+========================================= */
+
+.contact-success-title {
+  margin:
+    0
+    0
+    20px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: clamp(
+    2.2rem,
+    5vw,
+    3.5rem
+  );
+
+  font-weight: normal;
+
+  line-height: 1;
+
+  letter-spacing: 0.05em;
+
+  color: #3f2d56;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    3px 3px 0 #fffaf1;
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+.contact-success-message {
+  margin:
+    0
+    0
+    15px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  color: #3f2d56;
+}
+
+
+/* =========================================
+   REFRESH MESSAGE
+========================================= */
+
+.contact-success-refresh {
+  max-width: 390px;
+
+  margin: 0;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.78rem;
+
+  line-height: 1.7;
+
+  color: #5d4679;
+}
+
+
+/* =========================================
+   SUCCESS DECORATIONS
+========================================= */
+
+.contact-success-sparkle {
+  position: absolute;
+
+  color: #fffaf1;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 1.6rem;
+}
+
+
+.contact-success-sparkle-one {
+  top: 22px;
+  left: 26px;
+}
+
+
+.contact-success-sparkle-two {
+  right: 26px;
+  bottom: 20px;
+}
+
+
+/* =========================================
+   SUCCESS POP ANIMATION
+========================================= */
+
+@keyframes contactSuccessPop {
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.82)
+      translateY(12px);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      scale(1.03)
+      translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0);
+  }
+}
+
+
+/* =========================================
+   HERO ANIMATIONS
+========================================= */
+
+@keyframes contactCaretBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes contactSwooshOut {
+  0% {
+    transform:
+      translateX(0);
+
+    opacity: 1;
+  }
+
+  18% {
+    transform:
+      translateX(-18px);
+  }
+
+  100% {
+    transform:
+      translateX(115vw);
+
+    opacity: 0;
+  }
+}
+
+
+@keyframes contactSwooshBack {
+  0% {
+    transform:
+      translateX(115vw);
+
+    opacity: 0;
+  }
+
+  72% {
+    transform:
+      translateX(-14px);
+
+    opacity: 1;
+  }
+
+  88% {
+    transform:
+      translateX(7px);
+  }
+
+  100% {
+    transform:
+      translateX(0);
+
+    opacity: 1;
+  }
+}
+
+
+@keyframes cursorFloat {
+  from {
+    transform:
+      translate(-50%, -50%)
+      translateY(-5px)
+      rotate(-8deg);
+  }
+
+  to {
+    transform:
+      translate(-50%, -50%)
+      translateY(6px)
+      rotate(-4deg);
+  }
+}
+
+
+@keyframes cursorClick {
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      rotate(-4deg);
+  }
+
+  45% {
+    transform:
+      translate(-50%, -50%)
+      translate(4px, 5px)
+      scale(0.9)
+      rotate(-4deg);
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      rotate(-4deg);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+  .contact-hero {
+    height: 280px;
+
+    padding:
+      28px
+      18px
+      24px;
+  }
+
+
+  .contact-title-stage {
+    min-height: 100px;
+  }
+
+
+  .contact-send-button {
+    margin-top: 18px;
+  }
+
+
+  .pixel-cursor {
+    left: 84%;
+    top: 18%;
+
+    width: 60px;
+  }
+
+
+  .pixel-cursor--at-send {
+    left: calc(50% + 64px);
+    top: calc(50% + 69px);
+  }
+
+
+  .contact-form-section {
+    padding:
+      65px
+      18px
+      100px;
+  }
+
+
+  .contact-envelope-stage {
+    min-height: 790px;
+  }
+
+
+  .contact-envelope {
+    width: min(780px, 100vw);
+  }
+
+
+  .contact-paper {
+    width: min(620px, 76%);
+
+    margin-top: -50px;
+  }
+
+
+  .contact-paper-inner {
+    padding:
+      36px
+      32px
+      34px;
+  }
+
+
+  .contact-success-box {
+    margin:
+      45px
+      auto;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .contact-hero {
+    height: 200px;
+
+    padding:
+      18px
+      14px
+      16px;
+  }
+
+
+  .contact-title-stage {
+    min-height: 70px;
+  }
+
+
+  .contact-title {
+    font-size: clamp(
+      2.8rem,
+      15vw,
+      4rem
+    );
+
+    text-shadow:
+      2px 2px 0 #fff8e8,
+      4px 4px 0 #9079b7;
+  }
+
+
+  .contact-type-caret {
+    margin-left: 7px;
+  }
+
+
+  .contact-send-button {
+    min-width: 130px;
+
+    margin-top: 12px;
+
+    padding:
+      11px
+      23px
+      9px;
+
+    border-width: 3px;
+
+    box-shadow:
+      5px 5px 0 #3f2d56;
+
+    font-size: 0.95rem;
+  }
+
+
+  .contact-send-button--pressed {
+    transform:
+      translate(4px, 4px);
+
+    box-shadow:
+      1px 1px 0 #3f2d56;
+  }
+
+
+  .pixel-cursor {
+    left: 87%;
+    top: 16%;
+
+    width: 48px;
+  }
+
+
+  .pixel-cursor--at-send {
+    left: calc(50% + 52px);
+    top: calc(50% + 53px);
+  }
+
+
+  .pixel-cursor--click {
+    animation:
+      cursorClickMobile 0.28s
+      steps(2)
+      both;
+  }
+
+
+  .contact-form-section {
+    padding:
+      50px
+      10px
+      80px;
+  }
+
+
+  .contact-envelope-stage {
+    width: 100%;
+
+    min-height: 670px;
+  }
+
+
+  .contact-envelope {
+    width: 560px;
+
+    max-width: none;
+  }
+
+
+  .contact-paper {
+    width: min(370px, 86%);
+
+    margin-top: -50px;
+
+    border-width: 3px;
+
+    box-shadow:
+      6px 6px 0 #9079b7;
+  }
+
+
+  .contact-paper-inner {
+    padding:
+      28px
+      20px
+      24px;
+  }
+
+
+  .contact-form-heading {
+    font-size: 1.8rem;
+  }
+
+
+  .contact-form-subheading {
+    margin-bottom: 24px;
+
+    font-size: 0.8rem;
+  }
+
+
+  .contact-field {
+    margin-bottom: 18px;
+  }
+
+
+  .contact-label {
+    font-size: 0.82rem;
+  }
+
+
+  .contact-input,
+  .contact-textarea {
+    padding:
+      11px
+      12px;
+
+    border-width: 2px;
+
+    font-size: 0.86rem;
+  }
+
+
+  .contact-input {
+    min-height: 48px;
+  }
+
+
+  .contact-textarea {
+    min-height: 145px;
+  }
+
+
+  .contact-form-submit {
+    min-width: 125px;
+
+    padding:
+      11px
+      22px
+      9px;
+
+    border-width: 3px;
+
+    box-shadow:
+      5px 5px 0 #3f2d56;
+
+    font-size: 0.9rem;
+  }
+
+
+  .contact-success-box {
+    min-height: 270px;
+
+    margin:
+      28px
+      auto;
+
+    padding:
+      40px
+      22px;
+
+    border-width: 4px;
+
+    box-shadow:
+      7px 7px 0 #3f2d56;
+  }
+
+
+  .contact-success-title {
+    font-size: 2rem;
+  }
+
+
+  .contact-success-message {
+    font-size: 0.88rem;
+  }
+
+
+  .contact-success-refresh {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* =========================================
+   MOBILE CURSOR CLICK
+========================================= */
+
+@keyframes cursorClickMobile {
+  0% {
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      rotate(-4deg);
+  }
+
+  45% {
+    transform:
+      translate(-50%, -50%)
+      translate(3px, 4px)
+      scale(0.9)
+      rotate(-4deg);
+  }
+
+  100% {
+    transform:
+      translate(-50%, -50%)
+      scale(1)
+      rotate(-4deg);
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-title,
+  .pixel-cursor,
+  .contact-type-caret,
+  .contact-success-box {
+    animation: none !important;
+
+    transition: none !important;
+  }
+}

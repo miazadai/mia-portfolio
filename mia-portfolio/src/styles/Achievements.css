@@ -1,0 +1,832 @@
+/* =========================================
+   ACHIEVEMENTS SECTION
+========================================= */
+
+.achievements-section {
+  --achievements-cream: #f7f1df;
+
+  --achievements-purple-dark: #4a3165;
+  --achievements-purple: #8e79b3;
+  --achievements-purple-light: #e9ddf5;
+
+  --achievements-plum: #3f2d56;
+
+  --achievements-lime: #d0fe6f;
+
+  --achievements-black: #28232d;
+
+  --achievements-yellow: #f1d77b;
+  --achievements-blue: #a9cbea;
+  --achievements-green: #b9dca9;
+  --achievements-pink: #e7a6b5;
+  --achievements-teal: #9fd8ce;
+  --achievements-soft-purple: #c9bfd6;
+
+  position: relative;
+
+  width: 100%;
+
+  padding: 30px 24px 120px;
+
+  background: var(--achievements-cream);
+}
+
+.achievements-inner {
+  width: min(1120px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER BOX
+========================================= */
+
+.achievements-header-box {
+  width: min(780px, 100%);
+
+  margin: 0 auto 70px;
+
+  padding: 28px 36px 26px;
+
+  text-align: center;
+
+  background: var(--achievements-purple-dark);
+
+  border: 3px solid var(--achievements-black);
+
+  box-shadow:
+    7px
+    7px
+    0
+    var(--achievements-purple);
+
+  box-sizing: border-box;
+}
+
+.achievements-title {
+  margin: 0 0 13px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+
+  line-height: 1;
+
+  letter-spacing: 0.08em;
+
+  color: #fff8e8;
+
+  text-shadow:
+    3px
+    3px
+    0
+    var(--achievements-purple);
+}
+
+.achievements-subtitle {
+  margin: 0;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+
+  letter-spacing: 0.04em;
+
+  color: var(--achievements-purple-light);
+}
+
+
+/* =========================================
+   BLOCKS
+========================================= */
+
+.achievements-block {
+  width: 100%;
+}
+
+.achievements-skills-block {
+  margin-top: 70px;
+}
+
+
+/* =========================================
+   BLOCK HEADINGS
+========================================= */
+
+.achievements-block-heading {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-bottom: 38px;
+}
+
+.achievements-block-heading h3 {
+  margin: 0;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: clamp(1.3rem, 3vw, 2rem);
+
+  letter-spacing: 0.08em;
+
+  color: var(--achievements-plum);
+
+  text-align: center;
+}
+
+.achievements-heading-pixel {
+  width: 8px;
+  height: 8px;
+
+  flex: 0 0 auto;
+
+  background: var(--achievements-lime);
+
+  border: 2px solid var(--achievements-plum);
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================
+   BADGES GRID
+========================================= */
+
+.achievement-badges-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 32px;
+
+  width: min(920px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   BADGE CARD
+========================================= */
+
+.achievement-badge-card {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  min-height: 285px;
+
+  padding: 30px 22px 24px;
+
+  box-sizing: border-box;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--achievements-black);
+
+  box-shadow:
+    6px
+    6px
+    0
+    rgba(74, 49, 101, 0.2);
+
+  text-align: center;
+
+  overflow: hidden;
+
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.achievement-badge-card:hover {
+  transform: translate(-3px, -5px);
+
+  box-shadow:
+    9px
+    11px
+    0
+    rgba(74, 49, 101, 0.2);
+}
+
+
+/* =========================================
+   BADGE IMAGE AREA
+========================================= */
+
+.achievement-badge-top {
+  width: 100%;
+  height: 125px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 125px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   MEDAL PNG
+========================================= */
+
+.achievement-medal {
+  width: 92px !important;
+  height: 116px !important;
+
+  min-width: 92px;
+  min-height: 116px;
+
+  max-width: 92px;
+  max-height: 116px;
+
+  flex: 0 0 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  transition: transform 150ms ease;
+}
+
+.achievement-medal-image {
+  display: block !important;
+
+  width: 88px !important;
+  height: 110px !important;
+
+  min-width: 0 !important;
+  min-height: 0 !important;
+
+  max-width: 88px !important;
+  max-height: 110px !important;
+
+  object-fit: contain !important;
+
+  image-rendering: pixelated;
+
+  flex: none !important;
+
+  margin: 0 !important;
+
+  padding: 0 !important;
+}
+
+.achievement-badge-card:hover
+.achievement-medal {
+  animation:
+    achievementMedalHop
+    420ms
+    steps(3, end);
+}
+
+
+/* =========================================
+   UNLOCKED LABEL
+========================================= */
+
+.achievement-unlocked {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 26px;
+
+  margin-bottom: 15px;
+
+  padding: 4px 11px;
+
+  box-sizing: border-box;
+
+  background: var(--achievements-lime);
+
+  border: 2px solid var(--achievements-black);
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--achievements-black);
+}
+
+
+/* =========================================
+   BADGE TEXT
+========================================= */
+
+.achievement-badge-title {
+  margin: 0 0 10px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 1.05rem;
+
+  line-height: 1.3;
+
+  color: var(--achievements-plum);
+}
+
+.achievement-badge-description {
+  margin: 0 0 14px;
+
+  max-width: 210px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.72rem;
+
+  line-height: 1.55;
+
+  color: var(--achievements-black);
+}
+
+.achievement-badge-type {
+  margin-top: auto;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--achievements-purple);
+}
+
+
+/* =========================================
+   PIXEL SHELF
+========================================= */
+
+.achievement-pixel-shelf {
+  position: relative;
+
+  width: min(980px, 92%);
+
+  height: 20px;
+
+  margin: 45px auto 0;
+
+  background: var(--achievements-purple-dark);
+
+  border: 3px solid var(--achievements-black);
+
+  box-shadow:
+    inset
+    0
+    5px
+    0
+    var(--achievements-purple);
+}
+
+.achievement-pixel-shelf span {
+  position: absolute;
+
+  top: 20px;
+
+  width: 16px;
+  height: 16px;
+
+  background: var(--achievements-purple-dark);
+
+  border-left: 3px solid var(--achievements-black);
+  border-right: 3px solid var(--achievements-black);
+  border-bottom: 3px solid var(--achievements-black);
+}
+
+.achievement-pixel-shelf span:nth-child(1) {
+  left: 10%;
+}
+
+.achievement-pixel-shelf span:nth-child(2) {
+  left: calc(50% - 8px);
+}
+
+.achievement-pixel-shelf span:nth-child(3) {
+  right: 10%;
+}
+
+
+/* =========================================
+   SKILL GRID
+========================================= */
+
+.achievement-skill-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 22px;
+
+  width: min(980px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   SKILL CARD
+========================================= */
+
+.achievement-skill-card {
+  position: relative;
+
+  min-height: 205px;
+
+  padding: 24px 20px 22px;
+
+  box-sizing: border-box;
+
+  background: #fffaf0;
+
+  border: 3px solid var(--achievements-black);
+
+  box-shadow:
+    5px
+    5px
+    0
+    var(--skill-color);
+
+  transition:
+    transform 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.achievement-skill-card:hover {
+  transform: translate(-2px, -3px);
+
+  box-shadow:
+    7px
+    8px
+    0
+    var(--skill-color);
+}
+
+
+/* =========================================
+   SKILL COLORS
+========================================= */
+
+.achievement-skill-card--yellow {
+  --skill-color:
+    var(--achievements-yellow);
+}
+
+.achievement-skill-card--blue {
+  --skill-color:
+    var(--achievements-blue);
+}
+
+.achievement-skill-card--green {
+  --skill-color:
+    var(--achievements-green);
+}
+
+.achievement-skill-card--pink {
+  --skill-color:
+    var(--achievements-pink);
+}
+
+.achievement-skill-card--teal {
+  --skill-color:
+    var(--achievements-teal);
+}
+
+.achievement-skill-card--purple {
+  --skill-color:
+    var(--achievements-soft-purple);
+}
+
+
+/* =========================================
+   SKILL ICON
+========================================= */
+
+.achievement-skill-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 17px;
+
+  background: var(--skill-color);
+
+  border: 3px solid var(--achievements-black);
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.72rem;
+
+  font-weight: normal;
+
+  line-height: 1;
+
+  color: var(--achievements-plum);
+
+  transition: transform 130ms ease;
+}
+
+.achievement-skill-card:hover
+.achievement-skill-icon {
+  transform: translateY(-4px);
+}
+
+
+/* =========================================
+   SKILL TEXT
+========================================= */
+
+.achievement-skill-title {
+  margin: 0 0 16px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 1rem;
+
+  color: var(--achievements-plum);
+}
+
+.achievement-skill-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px 6px;
+}
+
+.achievement-skill-chip {
+  display: inline-block;
+
+  padding: 5px 7px;
+
+  background: var(--achievements-cream);
+
+  border:
+    1px solid
+    rgba(40, 35, 45, 0.35);
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.58rem;
+
+  line-height: 1.3;
+
+  color: var(--achievements-black);
+}
+
+
+/* =========================================
+   ACHIEVEMENT PROGRESS
+========================================= */
+
+.achievements-progress {
+  width: min(520px, 100%);
+
+  margin: 80px auto 0;
+
+  padding: 22px 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background: var(--achievements-purple-light);
+
+  border: 3px solid var(--achievements-black);
+
+  box-shadow:
+    6px
+    6px
+    0
+    var(--achievements-purple);
+}
+
+.achievements-progress-label {
+  margin-bottom: 9px;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.08em;
+
+  color: var(--achievements-plum);
+}
+
+.achievements-progress-count {
+  font-family: "PixelSerif", serif;
+
+  font-size: 1.5rem;
+
+  color: var(--achievements-purple-dark);
+}
+
+.achievements-progress-dots {
+  margin: 8px 0 4px;
+
+  font-size: 1rem;
+
+  letter-spacing: 0.25em;
+
+  color: var(--achievements-purple);
+}
+
+.achievements-progress-more {
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.1em;
+
+  color: var(--achievements-black);
+}
+
+
+/* =========================================
+   MEDAL ANIMATION
+========================================= */
+
+@keyframes achievementMedalHop {
+  0% {
+    transform: translateY(0);
+  }
+
+  35% {
+    transform: translateY(-7px);
+  }
+
+  70% {
+    transform: translateY(2px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .achievement-badges-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    gap: 16px;
+  }
+
+  .achievement-skill-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 720px) {
+
+  .achievements-section {
+    padding:
+      20px
+      18px
+      90px;
+  }
+
+  .achievements-header-box {
+    margin-bottom: 55px;
+
+    padding: 24px 18px;
+  }
+
+  .achievement-badges-grid {
+    grid-template-columns: 1fr;
+
+    width: min(370px, 100%);
+  }
+
+  .achievement-badge-card {
+    min-height: 0;
+  }
+
+  .achievement-pixel-shelf {
+    display: none;
+  }
+
+  .achievements-skills-block {
+    margin-top: 65px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+  .achievements-title {
+    font-size: 2rem;
+
+    text-shadow:
+      2px
+      2px
+      0
+      var(--achievements-purple);
+  }
+
+  .achievements-subtitle {
+    font-size: 0.72rem;
+  }
+
+  .achievements-block-heading {
+    gap: 10px;
+
+    margin-bottom: 28px;
+  }
+
+  .achievements-block-heading h3 {
+    font-size: 1.15rem;
+  }
+
+  .achievements-heading-pixel {
+    width: 6px;
+    height: 6px;
+  }
+
+  .achievement-skill-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .achievement-skill-card {
+    min-height: 0;
+  }
+
+  .achievements-progress {
+    margin-top: 60px;
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .achievement-badge-card,
+  .achievement-medal,
+  .achievement-skill-card,
+  .achievement-skill-icon {
+    transition: none;
+    animation: none;
+  }
+}

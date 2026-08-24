@@ -1,0 +1,294 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: sticky;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: 72px;
+
+  background-color: #9079b7;
+
+  border-bottom: 4px solid #4a3165;
+
+  z-index: 99999;
+
+  box-sizing: border-box;
+
+  transition: height 180ms ease;
+
+  /*
+    Keep the collapse button contained
+    vertically inside the navbar.
+  */
+  overflow: hidden;
+}
+
+/* =========================================
+   COLLAPSED NAVBAR
+========================================= */
+
+.navbar--collapsed {
+  height: 26px;
+}
+
+/* =========================================
+   INNER NAVBAR
+========================================= */
+
+.navbar__inner {
+  width: min(1200px, calc(100% - 40px));
+  height: 100%;
+
+  margin: 0 auto;
+
+  padding-right: 55px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  /*
+    VERY IMPORTANT.
+
+    Allows children inside this flex row
+    to actually shrink instead of forcing
+    the entire navbar wider.
+  */
+  min-width: 0;
+}
+
+/* =========================================
+   NAME / BRAND
+========================================= */
+
+.navbar__brand {
+  flex-shrink: 0;
+
+  color: #fffaf1;
+
+  text-decoration: none;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 1.15rem;
+
+  line-height: 1;
+
+  text-shadow: 2px 2px 0 #4a3165;
+
+  white-space: nowrap;
+}
+
+/* =========================================
+   NAVIGATION LINK CONTAINER
+========================================= */
+
+.navbar__links {
+  /*
+    Take every bit of remaining navbar space.
+  */
+  flex: 1 1 auto;
+
+  /*
+    This is the key property that lets this
+    flex child shrink smaller than its content.
+  */
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+
+  /*
+    Never wrap links onto another row.
+  */
+  flex-wrap: nowrap;
+  white-space: nowrap;
+
+  /*
+    When links no longer fit, THIS section
+    scrolls horizontally rather than clipping.
+  */
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  /*
+    Keeps scrolling available without having
+    an ugly scrollbar inside the navbar.
+  */
+  scrollbar-width: none;
+
+  /*
+    Gives a little breathing room at the
+    beginning/end when scrolling.
+  */
+  padding: 4px 2px;
+}
+
+.navbar__links::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar__link {
+  flex: 0 0 auto;
+
+  color: #fffaf1;
+
+  text-decoration: none;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.78rem;
+
+  line-height: 1;
+
+  text-shadow: 1px 1px 0 #4a3165;
+
+  transition:
+    color 120ms ease,
+    transform 120ms ease;
+}
+
+.navbar__link:hover {
+  color: #c7ff52;
+}
+
+.navbar__link--active {
+  color: #c7ff52;
+}
+
+/* =========================================
+   COLLAPSE BUTTON
+========================================= */
+
+.navbar__collapse-button {
+  position: absolute;
+
+  top: 50%;
+  right: 10px;
+
+  transform: translateY(-50%);
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  background-color: #4a3165;
+  color: #fffaf1;
+
+  border: 2px solid #4a3165;
+  border-radius: 0;
+
+  font-family: "PixelSerif", serif;
+
+  font-size: 0.72rem;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 100000;
+
+  transition:
+    width 180ms ease,
+    height 180ms ease,
+    background-color 120ms ease,
+    color 120ms ease;
+}
+
+.navbar__collapse-button:hover {
+  background-color: #c7ff52;
+  color: #4a3165;
+}
+
+/* =========================================
+   COLLAPSED BUTTON
+========================================= */
+
+.navbar--collapsed .navbar__collapse-button {
+  width: 42px;
+  height: 20px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 850px) {
+  .navbar__inner {
+    width: calc(100% - 24px);
+
+    gap: 20px;
+
+    padding-right: 50px;
+  }
+
+  .navbar__links {
+    gap: 24px;
+  }
+}
+
+/* =========================================
+   SMALLER SCREENS
+========================================= */
+
+@media (max-width: 600px) {
+  .navbar__inner {
+    width: calc(100% - 16px);
+
+    gap: 16px;
+
+    padding-right: 48px;
+  }
+
+  .navbar__brand {
+    font-size: 0.95rem;
+  }
+
+  .navbar__links {
+    gap: 22px;
+  }
+
+  .navbar__link {
+    font-size: 0.72rem;
+  }
+}
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 420px) {
+  .navbar__inner {
+    gap: 12px;
+  }
+
+  .navbar__brand {
+    font-size: 0.82rem;
+  }
+
+  .navbar__links {
+    gap: 18px;
+  }
+}

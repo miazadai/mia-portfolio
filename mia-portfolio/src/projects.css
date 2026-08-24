@@ -1,0 +1,1256 @@
+/* =========================================================
+   PROJECTS PAGE
+   Isolated from the rest of the portfolio.
+========================================================= */
+
+:root {
+  --projects-cream: #fffaf1;
+
+  --projects-purple-dark: #4a3165;
+  --projects-purple: #9079b7;
+  --projects-purple-medium: #6f4b98;
+  --projects-purple-light: #d7c5e7;
+
+  --projects-lime: #c7ff52;
+
+  /*
+    Keep this equal to your Resume
+    banner height.
+  */
+  --projects-banner-height: 260px;
+}
+
+.projects-page,
+.project-detail-preview-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: var(--projects-cream);
+
+  color: var(--projects-purple-dark);
+}
+
+/* =========================================================
+   HERO / ENGINEERING MAT
+========================================================= */
+
+.projects-hero {
+  position: relative;
+
+  width: 100%;
+  height: var(--projects-banner-height);
+
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+
+  background-image:
+    url("/images/purplemat.jpg");
+
+  background-size: cover;
+  background-position: center center;
+
+  border-bottom:
+    5px solid var(--projects-purple-dark);
+}
+
+.projects-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(74, 49, 101, 0.12);
+
+  pointer-events: none;
+}
+
+.projects-hero h1 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  padding: 0 24px;
+
+  color: #ffffff;
+
+  font-family:
+    "PixelSerif",
+    serif;
+
+  font-size:
+    clamp(
+      3.5rem,
+      8vw,
+      7.2rem
+    );
+
+  line-height: 0.9;
+
+  letter-spacing: 0.08em;
+
+  text-align: center;
+
+  text-shadow:
+    4px 4px 0
+      var(--projects-purple-dark),
+    7px 7px 0
+      rgba(63, 45, 86, 0.34);
+}
+
+/* =========================================================
+   PAGE CONTENT
+========================================================= */
+
+.projects-content {
+  width: 100%;
+
+  padding:
+    58px 0 86px;
+}
+
+.project-section {
+  width: 100%;
+
+  margin:
+    0 0 66px;
+}
+
+.project-section:last-child {
+  margin-bottom: 0;
+}
+
+.project-section-topline {
+  width:
+    min(
+      1420px,
+      calc(100% - 48px)
+    );
+
+  margin:
+    0 auto 6px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content:
+    space-between;
+
+  gap: 20px;
+}
+
+/* =========================================================
+   SIDE-QUEST-STYLE SECTION HEADER
+========================================================= */
+
+.project-section-title-box {
+  position: relative;
+
+  display: inline-block;
+
+  min-width:
+    min(
+      540px,
+      78vw
+    );
+
+  padding:
+    12px 26px 15px;
+
+  background:
+    var(--projects-purple);
+
+  border:
+    4px solid
+    var(--projects-purple-dark);
+
+  box-shadow:
+    7px 7px 0
+    var(--projects-purple-light);
+}
+
+.project-section-title-box::before,
+.project-section-title-box::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  background:
+    var(--projects-cream);
+}
+
+.project-section-title-box::before {
+  top: -4px;
+  left: -4px;
+
+  border-right:
+    4px solid
+    var(--projects-purple-dark);
+
+  border-bottom:
+    4px solid
+    var(--projects-purple-dark);
+}
+
+.project-section-title-box::after {
+  right: -4px;
+  bottom: -4px;
+
+  border-left:
+    4px solid
+    var(--projects-purple-dark);
+
+  border-top:
+    4px solid
+    var(--projects-purple-dark);
+}
+
+.project-section-title-box > span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #f8eefc;
+
+  font-size: 0.74rem;
+
+  letter-spacing: 0.18em;
+}
+
+.project-section-title-box h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "PixelSerif",
+    serif;
+
+  font-size:
+    clamp(
+      1.9rem,
+      3.5vw,
+      3rem
+    );
+
+  line-height: 1;
+
+  letter-spacing: 0.05em;
+
+  text-shadow:
+    3px 3px 0
+    var(--projects-purple-dark);
+}
+
+/* =========================================================
+   SCROLL BUTTONS
+========================================================= */
+
+.project-deck-controls {
+  display: flex;
+
+  gap: 10px;
+
+  padding-bottom: 2px;
+}
+
+.project-deck-controls button {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+
+  border-radius: 0;
+
+  background:
+    var(--projects-cream);
+
+  color:
+    var(--projects-purple-dark);
+
+  box-shadow:
+    4px 4px 0
+    var(--projects-purple-light);
+
+  cursor: pointer;
+
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.project-deck-controls button:hover {
+  transform:
+    translate(-1px, -2px);
+
+  background:
+    var(--projects-lime);
+
+  box-shadow:
+    6px 6px 0
+    var(--projects-purple-dark);
+}
+
+.project-deck-controls button:active {
+  transform:
+    translate(2px, 2px);
+
+  box-shadow:
+    2px 2px 0
+    var(--projects-purple-dark);
+}
+
+/* =========================================================
+   HORIZONTAL CARD DECK
+========================================================= */
+
+.project-card-track {
+  width: 100%;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  overscroll-behavior-inline:
+    contain;
+
+  padding:
+    40px
+    max(
+      72px,
+      calc(
+        (100vw - 1420px)
+        / 2
+        + 24px
+      )
+    )
+    50px;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    var(--projects-purple-dark)
+    var(--projects-purple-light);
+}
+
+.project-card-track::-webkit-scrollbar {
+  height: 10px;
+}
+
+.project-card-track::-webkit-scrollbar-track {
+  background:
+    var(--projects-purple-light);
+}
+
+.project-card-track::-webkit-scrollbar-thumb {
+  background:
+    var(--projects-purple-dark);
+
+  border:
+    2px solid
+    var(--projects-purple-light);
+}
+
+/* =========================================================
+   COLLECTIBLE PROJECT CARD
+========================================================= */
+
+.project-card {
+  position: relative;
+
+  z-index: 1;
+
+  flex:
+    0 0 306px;
+
+  width: 306px;
+
+  min-height: 548px;
+
+  transform:
+    rotate(
+      var(--card-tilt)
+    );
+
+  transform-origin:
+    center bottom;
+
+  transition:
+    transform 220ms ease,
+    filter 220ms ease;
+
+  filter:
+    drop-shadow(
+      9px
+      11px
+      0
+      rgba(74, 49, 101, 0.16)
+    );
+}
+
+/*
+  Roughly 30% overlap.
+*/
+.project-card + .project-card {
+  margin-left: -94px;
+}
+
+/*
+  Hover:
+  lift
+  straighten
+  enlarge
+  move above neighboring cards
+*/
+.project-card:hover,
+.project-card:focus-within {
+  z-index: 30;
+
+  transform:
+    translateY(-24px)
+    rotate(0deg)
+    scale(1.055);
+
+  filter:
+    drop-shadow(
+      12px
+      15px
+      0
+      rgba(74, 49, 101, 0.23)
+    );
+}
+
+.project-card-inner {
+  height: 100%;
+
+  min-height: 548px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 12px;
+
+  background:
+    var(--card-accent);
+
+  border:
+    4px solid
+    var(--projects-purple-dark);
+
+  border-radius: 18px;
+}
+
+/* =========================================================
+   CARD TOP ROW
+========================================================= */
+
+.project-card-kicker-row {
+  min-height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 8px;
+
+  padding:
+    0 3px 8px;
+}
+
+.project-card-number {
+  color:
+    var(--projects-purple-dark);
+
+  font-size: 0.72rem;
+
+  letter-spacing: 0.1em;
+}
+
+.project-card-type {
+  max-width: 76%;
+
+  padding:
+    5px 7px 4px;
+
+  background:
+    var(--projects-purple-dark);
+
+  color: #ffffff;
+
+  font-size: 0.6rem;
+
+  line-height: 1.15;
+
+  letter-spacing: 0.07em;
+
+  text-align: right;
+}
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.project-card-title-block {
+  min-height: 79px;
+
+  padding:
+    10px 12px 8px;
+
+  background:
+    var(--projects-cream);
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+
+  border-bottom: 0;
+}
+
+.project-card-title-block h3 {
+  margin:
+    0 0 5px;
+
+  color:
+    var(--projects-purple-dark);
+
+  font-size: 1.16rem;
+
+  line-height: 1.06;
+
+  letter-spacing: 0.01em;
+}
+
+.project-card-title-block p {
+  margin: 0;
+
+  color:
+    var(--projects-purple-medium);
+
+  font-size: 0.69rem;
+
+  line-height: 1.2;
+}
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.project-card-image-frame {
+  position: relative;
+
+  height: 174px;
+
+  overflow: hidden;
+
+  background:
+    var(--card-accent-soft);
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+}
+
+.project-card-image-frame img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/*
+  This appears automatically if
+  the image hasn't been added yet.
+*/
+.project-card-image-fallback {
+  position: absolute;
+
+  inset: 0;
+
+  display: grid;
+
+  align-content: center;
+
+  justify-items: center;
+
+  gap: 7px;
+
+  padding: 18px;
+
+  color:
+    var(--projects-purple-dark);
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(
+        255,
+        250,
+        241,
+        0.42
+      ),
+      rgba(
+        255,
+        250,
+        241,
+        0.42
+      )
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      transparent 17px,
+      rgba(
+        74,
+        49,
+        101,
+        0.08
+      ) 17px,
+      rgba(
+        74,
+        49,
+        101,
+        0.08
+      ) 18px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 17px,
+      rgba(
+        74,
+        49,
+        101,
+        0.08
+      ) 17px,
+      rgba(
+        74,
+        49,
+        101,
+        0.08
+      ) 18px
+    ),
+    var(--card-accent-soft);
+}
+
+.project-card-image-fallback span {
+  font-size: 1.05rem;
+
+  line-height: 1.05;
+
+  letter-spacing: 0.07em;
+}
+
+.project-card-image-fallback small {
+  font-size: 0.55rem;
+
+  letter-spacing: 0.12em;
+
+  opacity: 0.72;
+}
+
+/* =========================================================
+   ROLE / TIME
+========================================================= */
+
+.project-card-stats {
+  display: grid;
+
+  grid-template-columns:
+    1.35fr 0.85fr;
+
+  border-left:
+    3px solid
+    var(--projects-purple-dark);
+
+  border-right:
+    3px solid
+    var(--projects-purple-dark);
+
+  background:
+    var(--projects-cream);
+}
+
+.project-card-stats > div {
+  min-width: 0;
+
+  padding:
+    8px 9px;
+}
+
+.project-card-stats > div + div {
+  border-left:
+    2px solid
+    var(--card-accent);
+}
+
+.project-card-stats span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color:
+    var(--projects-purple-medium);
+
+  font-size: 0.52rem;
+
+  letter-spacing: 0.12em;
+}
+
+.project-card-stats strong {
+  display: block;
+
+  color:
+    var(--projects-purple-dark);
+
+  font-size: 0.65rem;
+
+  line-height: 1.18;
+
+  font-weight: normal;
+}
+
+/* =========================================================
+   TWO-SENTENCE SUMMARY
+========================================================= */
+
+.project-card-summary {
+  min-height: 122px;
+
+  margin: 0;
+
+  padding:
+    10px 11px;
+
+  background:
+    var(--projects-cream);
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+
+  border-top:
+    2px solid
+    var(--card-accent);
+
+  color: #463d4b;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.73rem;
+
+  line-height: 1.38;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.project-card-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+
+  padding:
+    8px 3px 7px;
+}
+
+.project-card-skills span {
+  padding:
+    4px 6px 3px;
+
+  background:
+    var(--card-accent-soft);
+
+  border:
+    2px solid
+    var(--projects-purple-dark);
+
+  color:
+    var(--projects-purple-dark);
+
+  font-size: 0.55rem;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   VIEW PROJECT BUTTON
+========================================================= */
+
+.project-card-button {
+  margin-top: auto;
+
+  min-height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    8px 10px 7px;
+
+  background:
+    var(--projects-purple-dark);
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.67rem;
+
+  letter-spacing: 0.08em;
+
+  box-shadow:
+    4px 4px 0
+    var(--projects-cream);
+
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.project-card-button:hover {
+  background:
+    var(--projects-lime);
+
+  color:
+    var(--projects-purple-dark);
+
+  transform:
+    translate(-1px, -2px);
+
+  box-shadow:
+    6px 6px 0
+    var(--projects-purple-dark);
+}
+
+.project-card-button:active {
+  transform:
+    translate(2px, 2px);
+
+  box-shadow:
+    2px 2px 0
+    var(--projects-purple-dark);
+}
+
+/* =========================================================
+   TEMPORARY PROJECT DETAIL VIEW
+
+   This is intentionally basic.
+   Later we turn this into:
+   hero image
+   overview
+   what I did
+   tools / skills
+   outcome
+   image gallery
+========================================================= */
+
+.project-detail-preview-page {
+  padding:
+    64px 24px 90px;
+}
+
+.project-detail-preview-hero {
+  width:
+    min(
+      1080px,
+      100%
+    );
+
+  margin:
+    0 auto;
+
+  padding: 12px;
+
+  background:
+    var(--detail-accent);
+
+  border:
+    4px solid
+    var(--projects-purple-dark);
+
+  box-shadow:
+    10px 10px 0
+    var(--projects-purple-light);
+}
+
+.project-detail-preview-inner {
+  padding:
+    clamp(
+      26px,
+      5vw,
+      58px
+    );
+
+  background:
+    var(--projects-cream);
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+}
+
+.project-back-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 36px;
+
+  color:
+    var(--projects-purple-dark);
+
+  text-decoration: none;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.08em;
+}
+
+.project-back-link:hover {
+  text-decoration: underline;
+}
+
+.project-detail-type {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  padding:
+    7px 10px 6px;
+
+  background:
+    var(--projects-purple-dark);
+
+  color: #ffffff;
+
+  font-size: 0.66rem;
+
+  letter-spacing: 0.09em;
+}
+
+.project-detail-preview-inner h1 {
+  max-width: 800px;
+
+  margin:
+    0 0 8px;
+
+  color:
+    var(--projects-purple-dark);
+
+  font-size:
+    clamp(
+      2.3rem,
+      6vw,
+      5rem
+    );
+
+  line-height: 0.98;
+
+  text-shadow:
+    3px 3px 0
+    var(--projects-purple-light);
+}
+
+.project-detail-org {
+  margin:
+    0 0 26px;
+
+  color:
+    var(--projects-purple-medium);
+
+  font-size: 1rem;
+}
+
+.project-detail-summary {
+  max-width: 830px;
+
+  margin:
+    0 0 30px;
+
+  color: #463d4b;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+.project-detail-meta {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  max-width: 720px;
+
+  margin-bottom: 36px;
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+}
+
+.project-detail-meta > div {
+  padding:
+    13px 15px;
+
+  background:
+    var(--detail-accent-soft);
+}
+
+.project-detail-meta > div + div {
+  border-left:
+    3px solid
+    var(--projects-purple-dark);
+}
+
+.project-detail-meta span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color:
+    var(--projects-purple-medium);
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.1em;
+}
+
+.project-detail-meta strong {
+  font-size: 0.82rem;
+
+  font-weight: normal;
+}
+
+.project-detail-coming-soon {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 18px;
+
+  background:
+    var(--detail-accent-soft);
+
+  border:
+    3px solid
+    var(--projects-purple-dark);
+}
+
+.project-detail-coming-soon strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 0.78rem;
+}
+
+.project-detail-coming-soon p {
+  margin: 0;
+
+  color: #514758;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 0.82rem;
+
+  line-height: 1.45;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 780px) {
+  :root {
+    --projects-banner-height:
+      220px;
+  }
+
+  .projects-content {
+    padding-top: 42px;
+  }
+
+  .project-section {
+    margin-bottom: 50px;
+  }
+
+  .project-section-topline {
+    width:
+      calc(100% - 28px);
+
+    align-items: flex-end;
+  }
+
+  .project-section-title-box {
+    min-width: 0;
+
+    width: 100%;
+
+    padding:
+      11px 16px 13px;
+  }
+
+  .project-section-title-box h2 {
+    font-size:
+      clamp(
+        1.55rem,
+        7vw,
+        2.2rem
+      );
+  }
+
+  /*
+    Mobile uses finger swiping,
+    so desktop arrows disappear.
+  */
+  .project-deck-controls {
+    display: none;
+  }
+
+  .project-card-track {
+    padding:
+      34px
+      26px
+      44px
+      18px;
+
+    -webkit-overflow-scrolling:
+      touch;
+  }
+
+  .project-card {
+    flex-basis: 264px;
+
+    width: 264px;
+
+    min-height: 520px;
+
+    transform:
+      rotate(2deg);
+  }
+
+  /*
+    Smaller overlap on phones.
+  */
+  .project-card + .project-card {
+    margin-left: -44px;
+  }
+
+  .project-card:hover,
+  .project-card:focus-within {
+    transform:
+      translateY(-15px)
+      rotate(0deg)
+      scale(1.025);
+  }
+
+  .project-card-inner {
+    min-height: 520px;
+  }
+
+  .project-card-image-frame {
+    height: 155px;
+  }
+
+  .project-card-summary {
+    min-height: 126px;
+
+    font-size: 0.69rem;
+  }
+
+  .project-detail-preview-page {
+    padding:
+      34px 14px 70px;
+  }
+
+  .project-detail-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .project-detail-meta > div + div {
+    border-left: 0;
+
+    border-top:
+      3px solid
+      var(--projects-purple-dark);
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-card-button,
+  .project-deck-controls button,
+  .project-card-track {
+    scroll-behavior: auto;
+
+    transition: none;
+  }
+}

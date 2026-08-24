@@ -1,0 +1,548 @@
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+  background: #fff8e8;
+  min-height: 100vh;
+  color: #302438;
+}
+
+
+/* =========================================
+   ABOUT BANNER
+========================================= */
+
+.about-banner {
+  background: #e69a78;
+  text-align: center;
+  padding: 56px 24px 48px;
+  border-bottom: 4px solid #9b5b4c;
+}
+
+.about-banner-kicker,
+.mini-section-label {
+  margin: 0 0 10px;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.about-banner h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  color: #fff8e8;
+
+  text-shadow:
+    3px 3px 0 #9b5b4c;
+}
+
+.about-banner-subtitle {
+  margin: 12px 0 0;
+  font-style: italic;
+  color: #3f2d56;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.about-intro {
+  width: min(1120px, 88%);
+  margin: 80px auto 100px;
+
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) 1.2fr;
+  gap: 72px;
+
+  align-items: center;
+}
+
+.about-headshot-frame {
+  position: relative;
+}
+
+.about-headshot {
+  width: 100%;
+  display: block;
+
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+
+  border-radius: 28px;
+
+  border: 3px solid #3f2d56;
+
+  box-shadow:
+    8px 8px 0 #d9c9e8;
+}
+
+.about-copy {
+  max-width: 650px;
+}
+
+.about-eyebrow {
+  color: #9b5b4c;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.about-copy h2 {
+  margin: 10px 0 28px;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+
+  color: #3f2d56;
+}
+
+.about-copy p {
+  line-height: 1.8;
+  margin: 0 0 18px;
+}
+
+
+/* =========================================
+   CHARACTER CLASS
+========================================= */
+
+.character-class-section {
+  width: min(1080px, 88%);
+  margin: 0 auto 110px;
+}
+
+.character-class-card {
+  background: #f3ead8;
+
+  border: 3px solid #3f2d56;
+  border-radius: 20px;
+
+  padding: 34px;
+
+  box-shadow:
+    7px 7px 0 #d9c9e8;
+}
+
+.character-class-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.class-stat span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+
+  color: #9b5b4c;
+}
+
+.class-stat strong {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   PLAYER STATS
+========================================= */
+
+.player-stats-section {
+  padding: 100px 0 120px;
+
+  background: #f4ede1;
+
+  border-top: 3px solid #e6d9c6;
+  border-bottom: 3px solid #e6d9c6;
+}
+
+.section-heading {
+  width: min(760px, 88%);
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 8px 0 14px;
+
+  font-size: clamp(2.4rem, 5vw, 4rem);
+
+  color: #3f2d56;
+}
+
+.section-heading > p:last-child {
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   RADAR
+========================================= */
+
+.radar-wrapper {
+  width: min(700px, 92%);
+  height: 520px;
+
+  margin: 0 auto 70px;
+}
+
+
+/* =========================================
+   SKILL PANELS
+========================================= */
+
+.skill-panel-grid {
+  width: min(1120px, 90%);
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 34px;
+
+  align-items: start;
+}
+
+.skill-panel {
+  background: #fff8e8;
+
+  border: 3px solid #3f2d56;
+  border-radius: 18px;
+
+  padding: 30px;
+
+  box-shadow:
+    6px 6px 0 #d9c9e8;
+}
+
+.skill-panel-heading {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid #e7dac7;
+}
+
+.skill-panel-heading span {
+  color: #e69a78;
+  font-weight: 700;
+}
+
+.skill-panel-heading h3 {
+  margin: 0;
+
+  color: #3f2d56;
+}
+
+
+/* =========================================
+   INDIVIDUAL SKILLS
+========================================= */
+
+.skill-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-row {
+  position: relative;
+
+  padding: 22px 0;
+
+  border-bottom: 1px solid #ded2c2;
+}
+
+.skill-row:last-child {
+  border-bottom: 0;
+}
+
+.skill-row-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.skill-name-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skill-name-group span {
+  font-size: 0.72rem;
+  color: #7b6b78;
+}
+
+.skill-rating {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.skill-blocks {
+  display: flex;
+  gap: 5px;
+}
+
+.skill-block {
+  width: 22px;
+  height: 13px;
+
+  border: 2px solid #735991;
+}
+
+.skill-block.full {
+  background: #a995c7;
+}
+
+.skill-block.empty {
+  background: transparent;
+}
+
+.skill-block.half {
+  background:
+    linear-gradient(
+      to right,
+      #a995c7 50%,
+      transparent 50%
+    );
+}
+
+.skill-number {
+  min-width: 40px;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  color: #3f2d56;
+}
+
+
+/* =========================================
+   SKILL HOVER
+========================================= */
+
+.skill-hover-card {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transform: translateY(-5px);
+
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    transform 0.3s ease;
+}
+
+.skill-row:hover .skill-hover-card {
+  max-height: 220px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+
+  padding-top: 18px;
+}
+
+.skill-hover-card p {
+  margin: 0 0 8px;
+
+  font-size: 0.68rem;
+
+  letter-spacing: 0.13em;
+
+  color: #e08265;
+
+  font-weight: 700;
+}
+
+.skill-hover-card span {
+  display: block;
+
+  margin: 6px 0;
+
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   SPECIAL MOVES
+========================================= */
+
+.special-moves-section {
+  padding: 110px 0 140px;
+}
+
+.special-moves-grid {
+  width: min(1120px, 90%);
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+.special-move-card {
+  position: relative;
+
+  min-height: 265px;
+
+  padding: 28px;
+
+  background: #f3ead8;
+
+  border: 3px solid #3f2d56;
+  border-radius: 18px;
+
+  box-shadow:
+    6px 6px 0 #e69a78;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.special-move-card:hover {
+  transform: translate(-3px, -3px);
+
+  box-shadow:
+    9px 9px 0 #e69a78;
+}
+
+.special-move-top {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 28px;
+}
+
+.move-number {
+  color: #9b5b4c;
+  font-weight: 700;
+}
+
+.move-status {
+  padding: 5px 9px;
+
+  background: #d9c9e8;
+
+  border: 2px solid #735991;
+
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.special-move-card h3 {
+  margin: 0 0 12px;
+
+  color: #3f2d56;
+
+  font-size: 1.4rem;
+}
+
+.move-tagline {
+  min-height: 44px;
+
+  font-style: italic;
+
+  color: #8d5d54;
+}
+
+.special-move-details {
+  margin-top: 22px;
+
+  opacity: 0.55;
+
+  transition: opacity 0.2s ease;
+}
+
+.special-move-card:hover
+.special-move-details {
+  opacity: 1;
+}
+
+.special-move-details p {
+  line-height: 1.6;
+}
+
+.move-effect {
+  display: block;
+
+  margin-top: 20px;
+
+  font-size: 0.67rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  color: #735991;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .about-headshot-frame {
+    width: min(460px, 100%);
+    margin: 0 auto;
+  }
+
+  .character-class-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-panel-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .special-moves-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .about-intro {
+    width: 90%;
+    gap: 45px;
+
+    margin-top: 55px;
+  }
+
+  .character-class-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-row-main {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .radar-wrapper {
+    height: 400px;
+  }
+}

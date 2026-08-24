@@ -1,0 +1,120 @@
+/* =========================================
+   FONT
+========================================= */
+
+@font-face {
+  font-family: "PixelSerif";
+  src: url("/fonts/PixelSerif_16px_v02.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
+
+:root {
+  --cream: #fffaf1;
+
+  --purple-dark: #4a3165;
+  --purple: #9079b7;
+  --purple-medium: #6f4b98;
+  --purple-light: #d7c5e7;
+
+  --lime: #c7ff52;
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--purple-dark) var(--cream);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  background-color: var(--cream);
+
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-width: 320px;
+  min-height: 100vh;
+
+  background-color: var(--cream);
+
+  color: var(--purple-dark);
+
+  font-family: "PixelSerif", serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--cream);
+}
+
+main {
+  width: 100%;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font-family: "PixelSerif", serif;
+}
+
+/* =========================================
+   TEXT SELECTION
+========================================= */
+
+::selection {
+  background-color: var(--lime);
+  color: var(--purple-dark);
+}
+
+::-moz-selection {
+  background-color: var(--lime);
+  color: var(--purple-dark);
+}
+
+/* =========================================
+   PAGE SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--purple-dark);
+
+  border: 3px solid var(--cream);
+
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--purple-medium);
+}

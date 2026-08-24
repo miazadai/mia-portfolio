@@ -1,0 +1,893 @@
+/* =========================================
+   RESUME PAGE
+========================================= */
+
+.resume-page {
+  --nav-purple: #8e79b3;
+  --resume-lavender: #e9ddf5;
+  --resume-lavender-light: #f2eafa;
+  --resume-purple: #8e79b3;
+  --resume-purple-dark: #574371;
+  --resume-plum: #3f2d56;
+  --resume-lime: #d0fe6f;
+  --resume-cream: #f7f1df;
+  --resume-paper: #ffffff;
+  --resume-black: #28232d;
+
+  /* Minecraft-inspired XP greens */
+  --xp-bright: #d7ff69;
+  --xp-light: #a9f24c;
+  --xp-mid: #70c93b;
+  --xp-dark: #3c812c;
+  --xp-deep: #244d27;
+  --xp-highlight: #efff98;
+
+  min-height: 100vh;
+  width: 100%;
+  background: var(--resume-cream);
+  color: var(--resume-black);
+  overflow-x: hidden;
+}
+
+/* =========================================
+   RESUME HERO
+========================================= */
+
+.resume-hero {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    var(--resume-lavender-light) 0%,
+    var(--resume-lavender) 100%
+  );
+  border-bottom: 4px solid var(--resume-black);
+  overflow: hidden;
+}
+
+/* =========================================
+   RESUME TITLE
+========================================= */
+
+.resume-title {
+  position: relative;
+  z-index: 5;
+  margin: 0;
+  font-family: "PixelSerif", serif;
+  font-size: clamp(4rem, 8vw, 6.7rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--resume-plum);
+  text-shadow:
+    2px 2px 0 #fff8e8,
+    5px 5px 0 var(--resume-purple);
+}
+
+/* =========================================
+   XP PIXEL AREA
+========================================= */
+
+.resume-xp-rain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* =========================================
+   MINECRAFT-STYLE GREEN XP PIXELS
+========================================= */
+
+.resume-xp-orb {
+  position: absolute;
+  top: -32px;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  background: var(--xp-mid);
+  animation:
+    resumeXpFall 8s linear infinite,
+    resumeXpGlow 1.7s steps(2, end) infinite;
+}
+
+.resume-xp-orb--large {
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--xp-deep);
+}
+
+.resume-xp-orb--medium {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--xp-deep);
+}
+
+.resume-xp-orb--small {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--xp-deep);
+}
+
+.resume-xp-center {
+  position: absolute;
+  display: block;
+  background: var(--xp-bright);
+}
+
+.resume-xp-center--large {
+  width: 6px;
+  height: 6px;
+  top: 3px;
+  left: 3px;
+  box-shadow:
+    3px 0 0 var(--xp-light),
+    0 3px 0 var(--xp-light),
+    3px 3px 0 var(--xp-mid);
+}
+
+.resume-xp-center--medium {
+  width: 4px;
+  height: 4px;
+  top: 3px;
+  left: 3px;
+  box-shadow:
+    2px 0 0 var(--xp-light),
+    0 2px 0 var(--xp-light),
+    2px 2px 0 var(--xp-mid);
+}
+
+.resume-xp-center--small {
+  width: 2px;
+  height: 2px;
+  top: 2px;
+  left: 2px;
+  box-shadow:
+    2px 0 0 var(--xp-light),
+    0 2px 0 var(--xp-light),
+    2px 2px 0 var(--xp-mid);
+}
+
+/* =========================================
+   XP FALLING ANIMATION
+========================================= */
+
+@keyframes resumeXpFall {
+  0% {
+    transform: translateY(-40px) rotate(45deg);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  30% {
+    transform:
+      translateY(75px)
+      translateX(8px)
+      rotate(135deg);
+  }
+
+  55% {
+    transform:
+      translateY(155px)
+      translateX(-6px)
+      rotate(225deg);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateY(330px)
+      translateX(5px)
+      rotate(405deg);
+
+    opacity: 0;
+  }
+}
+
+@keyframes resumeXpGlow {
+  0% {
+    filter: brightness(1);
+  }
+
+  50% {
+    filter: brightness(1.12);
+  }
+
+  100% {
+    filter: brightness(1);
+  }
+}
+
+/* =========================================
+   DOWNLOAD AREA
+========================================= */
+
+.resume-download-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 20px 44px;
+}
+
+/* =========================================
+   DOWNLOAD BUTTON
+========================================= */
+
+.resume-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 15px 26px;
+  background: var(--resume-lime);
+  color: var(--resume-black);
+  border: 3px solid var(--resume-black);
+  font-family: "PixelSerif", serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  box-shadow: 6px 6px 0 var(--resume-purple-dark);
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease;
+}
+
+.resume-download-button:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 var(--resume-purple-dark);
+  background: #ddff8e;
+}
+
+/* =========================================
+   MAIN RESUME AREA
+========================================= */
+
+.resume-stage {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  display: grid;
+
+  grid-template-columns:
+    minmax(150px, 210px)
+    minmax(0, 730px)
+    minmax(180px, 250px);
+
+  justify-content: center;
+  align-items: start;
+
+  column-gap: 34px;
+
+  padding-bottom: 80px;
+}
+
+/* =========================================
+   SIDE DECORATION SPACE
+========================================= */
+
+.resume-side-space {
+  position: relative;
+  min-height: 100%;
+}
+
+/* =========================================
+   RESUME PAPER WRAPPER
+========================================= */
+
+.resume-document-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+/* =========================================
+   COLLAPSIBLE RESUME VIEWPORT
+========================================= */
+
+.resume-document-viewport {
+  position: relative;
+  width: 100%;
+
+  overflow: hidden;
+
+  transition:
+    max-height 600ms ease;
+}
+
+.resume-document-wrapper--collapsed
+.resume-document-viewport {
+  max-height: 360px;
+}
+
+.resume-document-wrapper--expanded
+.resume-document-viewport {
+  max-height: 1600px;
+}
+
+/* =========================================
+   RESUME LINK
+========================================= */
+
+.resume-document-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+}
+
+/* =========================================
+   RESUME IMAGE
+========================================= */
+
+.resume-document {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  background:
+    var(--resume-paper);
+
+  border:
+    3px solid
+    var(--resume-black);
+
+  box-shadow:
+    9px
+    9px
+    0
+    rgba(
+      87,
+      67,
+      113,
+      0.22
+    );
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.resume-document:hover {
+  transform:
+    translate(
+      -2px,
+      -2px
+    );
+
+  box-shadow:
+    12px
+    12px
+    0
+    rgba(
+      87,
+      67,
+      113,
+      0.22
+    );
+}
+
+/* =========================================
+   COLLAPSED FADE
+========================================= */
+
+.resume-preview-fade {
+  position: absolute;
+
+  left: 3px;
+  right: 3px;
+  bottom: 0;
+
+  height: 90px;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(247, 241, 223, 0),
+      rgba(247, 241, 223, 0.88) 72%,
+      var(--resume-cream) 100%
+    );
+}
+
+/* =========================================
+   EXPAND / COLLAPSE ARROW
+========================================= */
+
+.resume-expand-button {
+  position: absolute;
+
+  left: 50%;
+  bottom: -25px;
+
+  z-index: 8;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    var(--resume-lime);
+
+  color:
+    var(--resume-plum);
+
+  border:
+    3px solid
+    var(--resume-black);
+
+  box-shadow:
+    5px
+    5px
+    0
+    var(--resume-purple-dark);
+
+  cursor: pointer;
+
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    background 120ms ease;
+}
+
+.resume-expand-button:hover {
+  transform:
+    translateX(-50%)
+    translate(2px, 2px);
+
+  box-shadow:
+    3px
+    3px
+    0
+    var(--resume-purple-dark);
+
+  background:
+    #ddff8e;
+}
+
+.resume-expand-button:focus-visible {
+  outline:
+    3px solid
+    var(--resume-purple);
+
+  outline-offset:
+    4px;
+}
+
+/* =========================================
+   CHARACTER AREA
+========================================= */
+
+.resume-character-area {
+  position: sticky;
+  top: 120px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  padding-top: 55px;
+}
+
+/* =========================================
+   CHARACTER CIRCLE
+========================================= */
+
+.resume-character-circle {
+  position: relative;
+
+  width: 158px;
+  height: 158px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  border:
+    4px solid
+    var(--resume-black);
+
+  background:
+    var(--resume-lavender-light);
+
+  box-shadow:
+    6px
+    6px
+    0
+    var(--resume-purple-dark);
+
+  z-index: 3;
+}
+
+.resume-character-circle::after {
+  content: "";
+
+  position: absolute;
+  inset: 7px;
+
+  border:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.65
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.resume-character {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  image-rendering: pixelated;
+}
+
+/* =========================================
+   SPEECH BUBBLE
+========================================= */
+
+.resume-speech-bubble {
+  position: relative;
+
+  width: 220px;
+  min-height: 116px;
+
+  margin-top: 24px;
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  background: #fffaf0;
+
+  border:
+    3px solid
+    var(--resume-black);
+
+  box-shadow:
+    6px
+    6px
+    0
+    var(--resume-purple-dark);
+
+  z-index: 2;
+}
+
+/* =========================================
+   SPEECH BUBBLE POINTER
+========================================= */
+
+.resume-speech-bubble::before {
+  content: "";
+
+  position: absolute;
+
+  top: -13px;
+  left: 42px;
+
+  width: 20px;
+  height: 20px;
+
+  background: #fffaf0;
+
+  border-left:
+    3px solid
+    var(--resume-black);
+
+  border-top:
+    3px solid
+    var(--resume-black);
+
+  transform:
+    rotate(45deg);
+
+  z-index: -1;
+}
+
+/* =========================================
+   TYPEWRITER TEXT
+========================================= */
+
+.resume-typewriter-text {
+  margin: 0;
+  width: 100%;
+
+  font-family:
+    "PixelSerif",
+    serif;
+
+  font-size: 0.83rem;
+  line-height: 1.65;
+
+  color:
+    var(--resume-black);
+
+  text-align: left;
+}
+
+/* =========================================
+   TYPEWRITER CURSOR
+========================================= */
+
+.resume-typewriter-cursor {
+  display: inline-block;
+
+  margin-left: 2px;
+
+  color:
+    var(--resume-purple-dark);
+
+  animation:
+    resumeCursorBlink
+    0.65s
+    steps(1)
+    infinite;
+}
+
+@keyframes resumeCursorBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .resume-stage {
+    width:
+      min(
+        800px,
+        calc(100% - 36px)
+      );
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    row-gap: 36px;
+  }
+
+  .resume-side-left {
+    display: none;
+  }
+
+  .resume-side-right {
+    grid-row: 1;
+  }
+
+  .resume-document-wrapper {
+    grid-row: 2;
+  }
+
+  .resume-document-wrapper--collapsed
+  .resume-document-viewport {
+    max-height: 500px;
+  }
+
+  .resume-document-wrapper--expanded
+  .resume-document-viewport {
+    max-height: 1800px;
+  }
+
+  .resume-character-area {
+    position: relative;
+    top: auto;
+
+    padding-top: 0;
+
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 28px;
+  }
+
+  .resume-speech-bubble {
+    margin-top: 0;
+  }
+
+  .resume-speech-bubble::before {
+    top: 42px;
+    left: -13px;
+
+    border-left:
+      3px solid
+      var(--resume-black);
+
+    border-bottom:
+      3px solid
+      var(--resume-black);
+
+    border-top: 0;
+
+    transform:
+      rotate(45deg);
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .resume-hero {
+    height: 200px;
+  }
+
+  .resume-title {
+    font-size: 3.5rem;
+
+    text-shadow:
+      2px
+      2px
+      0
+      #fff8e8,
+      4px
+      4px
+      0
+      var(--resume-purple);
+  }
+
+  .resume-download-section {
+    padding:
+      30px
+      16px
+      34px;
+  }
+
+  .resume-download-button {
+    padding:
+      12px
+      18px;
+
+    font-size:
+      0.8rem;
+  }
+
+  .resume-stage {
+    width:
+      calc(
+        100% - 24px
+      );
+
+    row-gap: 28px;
+
+    padding-bottom:
+      70px;
+  }
+
+  .resume-document-wrapper--collapsed
+  .resume-document-viewport {
+    max-height:
+      360px;
+  }
+
+  .resume-document-wrapper--expanded
+  .resume-document-viewport {
+    max-height:
+      1500px;
+  }
+
+  .resume-expand-button {
+    width: 46px;
+    height: 46px;
+
+    bottom: -22px;
+  }
+
+  .resume-character-area {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .resume-character-circle {
+    width: 135px;
+    height: 135px;
+  }
+
+  .resume-speech-bubble {
+    width:
+      min(
+        260px,
+        calc(100vw - 50px)
+      );
+
+    margin-top: 22px;
+  }
+
+  .resume-speech-bubble::before {
+    top: -13px;
+    left: 42px;
+
+    border-top:
+      3px solid
+      var(--resume-black);
+
+    border-left:
+      3px solid
+      var(--resume-black);
+
+    border-bottom: 0;
+
+    transform:
+      rotate(45deg);
+  }
+
+  .resume-document {
+    border-width: 2px;
+
+    box-shadow:
+      6px
+      6px
+      0
+      rgba(
+        87,
+        67,
+        113,
+        0.22
+      );
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .resume-xp-orb {
+    animation: none;
+    top: 40%;
+  }
+
+  .resume-typewriter-cursor {
+    animation: none;
+  }
+
+  .resume-download-button,
+  .resume-document,
+  .resume-document-viewport,
+  .resume-expand-button {
+    transition: none;
+  }
+}
