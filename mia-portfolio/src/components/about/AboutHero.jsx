@@ -1,30 +1,47 @@
+import { publicPath } from "../../utils/publicPath";
+
 function AboutHero() {
   return (
     <section className="about-hero">
-      <div className="about-banner">
-        <p className="about-banner-kicker">PLAYER PROFILE</p>
 
-        <h1>ABOUT ME</h1>
+      <div className="about-banner">
+
+        <p className="about-banner-kicker">
+          PLAYER PROFILE
+        </p>
+
+        <h1>
+          ABOUT ME
+        </h1>
 
         <p className="about-banner-subtitle">
           the player behind the projects
         </p>
+
       </div>
 
       <div className="about-intro">
+
         <div className="about-headshot-frame">
+
           <img
-            src="/images/headshot.jpg"
+            src={publicPath(
+              "images/headshot.jpg"
+            )}
             alt="Mia'Zadai Navarro"
             className="about-headshot"
           />
 
           <span className="headshot-corner corner-one" />
           <span className="headshot-corner corner-two" />
+
         </div>
 
         <div className="about-copy">
-          <p className="about-eyebrow">HI, I'M MIA!</p>
+
+          <p className="about-eyebrow">
+            HI, I'M MIA!
+          </p>
 
           <h2>
             Engineer, researcher,
@@ -57,8 +74,11 @@ function AboutHero() {
             More than anything, I like understanding how things work, finding
             what could work better, and actually doing something about it.
           </p>
+
         </div>
+
       </div>
+
     </section>
   );
 }

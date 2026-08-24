@@ -1,5 +1,7 @@
 import { publicPath } from "../utils/publicPath";
+
 import { useEffect, useState } from "react";
+
 import {
   ChevronDown,
   ChevronUp,
@@ -37,10 +39,6 @@ const xpOrbs = [
   { left: "91%", delay: "-4.5s", size: "medium" },
 ];
 
-/* =========================================
-   CHARACTER DIALOGUE LOOP
-========================================= */
-
 const bubbleMessages = [
   "Welcome to my resume! You can see my experience here.",
   "Psst... there are achievements waiting below too.",
@@ -60,20 +58,17 @@ function Resume() {
 
   const [resumePreviewSrc, setResumePreviewSrc] =
     useState(
-      publicPath("MiaZadai_Navarro_Resume_Preview.png")
+      publicPath(
+        "MiaZadai_Navarro_Resume_Preview.png"
+      )
     );
 
   const currentMessage =
     bubbleMessages[messageIndex];
 
-  /* =========================================
-     TYPEWRITER LOOP
-  ========================================= */
-
   useEffect(() => {
     let timeout;
 
-    /* TYPE MESSAGE */
     if (
       !isDeleting &&
       typedText.length < currentMessage.length
@@ -86,20 +81,14 @@ function Resume() {
           )
         );
       }, 55);
-    }
-
-    /* PAUSE AFTER FULL MESSAGE */
-    else if (
+    } else if (
       !isDeleting &&
       typedText.length === currentMessage.length
     ) {
       timeout = setTimeout(() => {
         setIsDeleting(true);
       }, 2200);
-    }
-
-    /* DELETE MESSAGE */
-    else if (
+    } else if (
       isDeleting &&
       typedText.length > 0
     ) {
@@ -111,10 +100,7 @@ function Resume() {
           )
         );
       }, 28);
-    }
-
-    /* MOVE TO NEXT MESSAGE */
-    else if (
+    } else if (
       isDeleting &&
       typedText.length === 0
     ) {
@@ -136,27 +122,17 @@ function Resume() {
     currentMessage,
   ]);
 
-  /* =========================================
-     RESUME PREVIEW FALLBACK
-  ========================================= */
-
   const handlePreviewError = () => {
-    if (
-      resumePreviewSrc !==
-      "/resume-preview.png"
-    ) {
-      setResumePreviewSrc(
-        "/resume-preview.png"
-      );
+    const fallbackPreview =
+      publicPath("resume-preview.png");
+
+    if (resumePreviewSrc !== fallbackPreview) {
+      setResumePreviewSrc(fallbackPreview);
     }
   };
 
   return (
     <main className="resume-page">
-
-      {/* =====================================
-          RESUME HERO
-      ===================================== */}
 
       <section className="resume-hero">
 
@@ -186,15 +162,12 @@ function Resume() {
 
       </section>
 
-
-      {/* =====================================
-          DOWNLOAD
-      ===================================== */}
-
       <section className="resume-download-section">
 
         <a
-          href="/MiaZadai_Navarro_Resume.pdf"
+          href={publicPath(
+            "MiaZadai_Navarro_Resume.pdf"
+          )}
           download="MiaZadai_Navarro_Resume.pdf"
           className="resume-download-button"
         >
@@ -208,22 +181,12 @@ function Resume() {
 
       </section>
 
-
-      {/* =====================================
-          RESUME DISPLAY
-      ===================================== */}
-
       <section className="resume-stage">
 
         <aside
           className="resume-side-space resume-side-left"
           aria-hidden="true"
         />
-
-
-        {/* =====================================
-            RESUME
-        ===================================== */}
 
         <div
           className={`resume-document-wrapper ${
@@ -236,7 +199,9 @@ function Resume() {
           <div className="resume-document-viewport">
 
             <a
-              href="/MiaZadai_Navarro_Resume.pdf"
+              href={publicPath(
+                "MiaZadai_Navarro_Resume.pdf"
+              )}
               target="_blank"
               rel="noreferrer"
               className="resume-document-link"
@@ -251,7 +216,6 @@ function Resume() {
 
             </a>
 
-
             {!isResumeExpanded && (
               <div
                 className="resume-preview-fade"
@@ -260,11 +224,6 @@ function Resume() {
             )}
 
           </div>
-
-
-          {/* =====================================
-              EXPAND / COLLAPSE BUTTON
-          ===================================== */}
 
           <button
             type="button"
@@ -301,11 +260,6 @@ function Resume() {
 
         </div>
 
-
-        {/* =====================================
-            CHARACTER
-        ===================================== */}
-
         <aside className="resume-side-space resume-side-right">
 
           <div className="resume-character-area">
@@ -313,17 +267,12 @@ function Resume() {
             <div className="resume-character-circle">
 
               <img
-                src="/avatar.png"
+                src={publicPath("avatar.png")}
                 alt="Pixel character of Mia'Zadai"
                 className="resume-character"
               />
 
             </div>
-
-
-            {/* =====================================
-                TYPEWRITER SPEECH BUBBLE
-            ===================================== */}
 
             <div className="resume-speech-bubble">
 
@@ -344,11 +293,6 @@ function Resume() {
         </aside>
 
       </section>
-
-
-      {/* =====================================
-          ACHIEVEMENTS
-      ===================================== */}
 
       <Achievements />
 
