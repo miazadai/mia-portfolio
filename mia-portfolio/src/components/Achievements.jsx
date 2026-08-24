@@ -1,3 +1,5 @@
+import { publicPath } from "../utils/publicPath";
+
 import "../styles/Achievements.css";
 
 const achievementBadges = [
@@ -106,7 +108,7 @@ function PixelMedal() {
       aria-hidden="true"
     >
       <img
-        src="/goldmedal.png"
+        src={publicPath("goldmedal.png")}
         alt=""
         className="achievement-medal-image"
       />
@@ -193,6 +195,7 @@ function Achievements() {
           </p>
         </header>
 
+
         {/* =====================================
             FEATURED BADGES
         ===================================== */}
@@ -218,6 +221,7 @@ function Achievements() {
           </div>
         </div>
 
+
         {/* =====================================
             PIXEL SHELF
         ===================================== */}
@@ -230,6 +234,7 @@ function Achievements() {
           <span />
           <span />
         </div>
+
 
         {/* =====================================
             SKILL INVENTORY
@@ -255,6 +260,7 @@ function Achievements() {
             ))}
           </div>
         </div>
+
 
         {/* =====================================
             FOOTER

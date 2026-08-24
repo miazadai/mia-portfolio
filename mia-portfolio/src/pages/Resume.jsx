@@ -1,3 +1,4 @@
+import { publicPath } from "../utils/publicPath";
 import { useEffect, useState } from "react";
 import {
   ChevronDown,
@@ -59,7 +60,7 @@ function Resume() {
 
   const [resumePreviewSrc, setResumePreviewSrc] =
     useState(
-      "/MiaZadai_Navarro_Resume_Preview.png"
+      publicPath("MiaZadai_Navarro_Resume_Preview.png")
     );
 
   const currentMessage =

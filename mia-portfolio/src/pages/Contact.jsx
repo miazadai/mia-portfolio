@@ -1,4 +1,7 @@
+import { publicPath } from "../utils/publicPath";
+
 import { useEffect, useState } from "react";
+
 import "../styles/Contact.css";
 
 const CONTACT_TEXT = "CONTACT ME";
@@ -13,7 +16,8 @@ function Contact() {
     message: "",
   });
 
-  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [submitStatus, setSubmitStatus] =
+    useState("idle");
 
   useEffect(() => {
     let cancelled = false;
@@ -27,10 +31,17 @@ function Contact() {
       while (!cancelled) {
         setPhase("typing");
 
-        for (let i = 1; i <= CONTACT_TEXT.length; i++) {
+        for (
+          let i = 1;
+          i <= CONTACT_TEXT.length;
+          i++
+        ) {
           if (cancelled) return;
 
-          setDisplayText(CONTACT_TEXT.slice(0, i));
+          setDisplayText(
+            CONTACT_TEXT.slice(0, i)
+          );
+
           await sleep(115);
         }
 
@@ -39,34 +50,46 @@ function Contact() {
         if (cancelled) return;
 
         setPhase("cursorMove");
+
         await sleep(900);
 
         if (cancelled) return;
 
         setPhase("click");
+
         await sleep(280);
 
         if (cancelled) return;
 
         setPhase("swooshOut");
+
         await sleep(520);
 
         if (cancelled) return;
 
         setPhase("swooshBack");
+
         await sleep(720);
 
         if (cancelled) return;
 
         setPhase("cursorReturn");
+
         await sleep(700);
 
         setPhase("deleting");
 
-        for (let i = CONTACT_TEXT.length - 1; i >= 0; i--) {
+        for (
+          let i = CONTACT_TEXT.length - 1;
+          i >= 0;
+          i--
+        ) {
           if (cancelled) return;
 
-          setDisplayText(CONTACT_TEXT.slice(0, i));
+          setDisplayText(
+            CONTACT_TEXT.slice(0, i)
+          );
+
           await sleep(65);
         }
 
@@ -146,12 +169,15 @@ function Contact() {
 
       const successfulSubmission =
         response.ok &&
-        (data?.success === true ||
-          data?.success === "true");
+        (
+          data?.success === true ||
+          data?.success === "true"
+        );
 
       if (!successfulSubmission) {
         throw new Error(
-          data?.message || "Message could not be sent."
+          data?.message ||
+          "Message could not be sent."
         );
       }
 
@@ -164,18 +190,22 @@ function Contact() {
       setSubmitStatus("success");
     } catch (error) {
       console.error(error);
+
       setSubmitStatus("error");
     }
   };
 
   return (
     <main className="contact-page">
+
       {/* =========================================
           HERO
       ========================================= */}
 
       <section className="contact-hero">
+
         <div className="contact-title-stage">
+
           <h1
             className={[
               "contact-title",
@@ -191,6 +221,7 @@ function Contact() {
               .filter(Boolean)
               .join(" ")}
           >
+
             <span className="contact-title-text">
               {displayText}
             </span>
@@ -208,8 +239,11 @@ function Contact() {
                 .join(" ")}
               aria-hidden="true"
             />
+
           </h1>
+
         </div>
+
 
         <button
           type="button"
@@ -225,6 +259,7 @@ function Contact() {
         >
           SEND
         </button>
+
 
         <div
           className={[
@@ -242,37 +277,52 @@ function Contact() {
             .join(" ")}
           aria-hidden="true"
         >
+
           <img
-            src="/images/cursor.png"
+            src={publicPath(
+              "images/cursor.png"
+            )}
             alt=""
             className="pixel-cursor-image"
             draggable="false"
           />
+
         </div>
+
       </section>
+
 
       {/* =========================================
           CONTACT FORM
       ========================================= */}
 
       <section className="contact-form-section">
+
         <div className="contact-envelope-stage">
+
           <img
-            src="/images/fullenvelope.png"
+            src={publicPath(
+              "images/fullenvelope.png"
+            )}
             alt=""
             className="contact-envelope"
             draggable="false"
             aria-hidden="true"
           />
 
+
           <div className="contact-paper">
+
             <div className="contact-paper-inner">
+
               {submitStatus === "success" ? (
+
                 <div
                   className="contact-success-box"
                   role="status"
                   aria-live="polite"
                 >
+
                   <div className="contact-success-sparkle contact-success-sparkle-one">
                     ✦
                   </div>
@@ -293,13 +343,17 @@ function Contact() {
                     Refresh the page if you need to send
                     another message.
                   </p>
+
                 </div>
+
               ) : submitStatus === "activation" ? (
+
                 <div
                   className="contact-success-box"
                   role="status"
                   aria-live="polite"
                 >
+
                   <h2 className="contact-success-title">
                     ONE MORE STEP!
                   </h2>
@@ -313,9 +367,13 @@ function Contact() {
                     After confirming it, refresh this page
                     and send a test message again.
                   </p>
+
                 </div>
+
               ) : (
+
                 <>
+
                   <h2 className="contact-form-heading">
                     LET&apos;S TALK
                   </h2>
@@ -325,16 +383,20 @@ function Contact() {
                     to you.
                   </p>
 
+
                   <form
                     className="contact-form"
                     onSubmit={handleSubmit}
                   >
+
                     <div className="contact-field">
+
                       <label
                         htmlFor="name"
                         className="contact-label"
                       >
                         YOUR NAME
+
                         <span className="contact-required">
                           *
                         </span>
@@ -350,14 +412,18 @@ function Contact() {
                         autoComplete="name"
                         required
                       />
+
                     </div>
 
+
                     <div className="contact-field">
+
                       <label
                         htmlFor="email"
                         className="contact-label"
                       >
                         EMAIL
+
                         <span className="contact-required">
                           *
                         </span>
@@ -373,14 +439,18 @@ function Contact() {
                         autoComplete="email"
                         required
                       />
+
                     </div>
 
+
                     <div className="contact-field">
+
                       <label
                         htmlFor="message"
                         className="contact-label"
                       >
                         MESSAGE
+
                         <span className="contact-required">
                           *
                         </span>
@@ -395,7 +465,9 @@ function Contact() {
                         rows="7"
                         required
                       />
+
                     </div>
+
 
                     {submitStatus === "error" && (
                       <div
@@ -407,7 +479,9 @@ function Contact() {
                       </div>
                     )}
 
+
                     <div className="contact-form-actions">
+
                       <button
                         type="submit"
                         className="contact-form-submit"
@@ -419,14 +493,23 @@ function Contact() {
                           ? "SENDING..."
                           : "SEND"}
                       </button>
+
                     </div>
+
                   </form>
+
                 </>
+
               )}
+
             </div>
+
           </div>
+
         </div>
+
       </section>
+
     </main>
   );
 }
