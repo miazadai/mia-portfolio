@@ -179,7 +179,6 @@ function Cover({ project, number }) {
     );
   }
 
-<<<<<<< HEAD
   if (media.type === "video") {
     return (
       <video
@@ -191,17 +190,6 @@ function Cover({ project, number }) {
         playsInline
         preload="metadata"
         aria-hidden="true"
-=======
-  if (project.cover.type === "video") {
-    return (
-      <video
-        className="project-cover-media"
-        src={asset(project.cover.src)}
-        muted
-        loop
-        playsInline
-        autoPlay
->>>>>>> 6588b34bfc65cba862f0d56990c655d47add7e26
         onError={() => setFailed(true)}
       />
     );
