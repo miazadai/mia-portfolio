@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import {
   Routes,
   Route,
 } from "react-router";
 
 import Navbar from "./components/Navbar";
+import usePageMotion from "./hooks/usePageMotion";
 
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
@@ -12,8 +14,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 function App() {
+  const motionRootRef = useRef(null);
+  usePageMotion(motionRootRef);
+
   return (
     <div
+      ref={motionRootRef}
       style={{
         width: "100%",
         minHeight: "100vh",
@@ -21,7 +27,6 @@ function App() {
       }}
     >
       <Navbar />
-
       <Routes>
         <Route
           path="/"
@@ -47,7 +52,6 @@ function App() {
           path="/contact"
           element={<Contact />}
         />
-
         <Route
           path="*"
           element={<Home />}
